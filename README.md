@@ -1,6 +1,7 @@
 # Finite State Machine Simulator
 My final year project at King's College London.  
 Java application allowing users to simulate finite state machines.
+N.B. This project is no longer being worked on.
 # Screenshots
 ### Welcome Screen
 ![Welcome Screen](https://user-images.githubusercontent.com/25368652/74090979-58a00800-4aaa-11ea-825a-2bc7a9727890.jpg)
