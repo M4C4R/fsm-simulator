@@ -1,0 +1,5 @@
+states={Q0,37.0,37.0}{Q1,37.0,163.0}{Q2,147.0,106.5}
+alphabet=[0, 1]
+initialState=Q1
+acceptingStates=[Q1]
+transitions=

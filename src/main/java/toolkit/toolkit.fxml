@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Text?>
+<?import java.net.URL?>
+<BorderPane id="bpMain" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="550.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.toolkit.ToolkitController">
+	<bottom>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Copyright © 2018 - 2019 by Mert Acar"
+              BorderPane.alignment="TOP_CENTER">
+			<BorderPane.margin>
+                <Insets bottom="10.0"/>
+			</BorderPane.margin>
+		</Text>
+	</bottom>
+   <top>
+       <BorderPane prefWidth="800.0" BorderPane.alignment="CENTER">
+         <left>
+             <HBox prefWidth="250.0" BorderPane.alignment="CENTER">
+               <children>
+                   <Button id="btnBack" fx:id="btnBack" mnemonicParsing="false" onAction="#launchMainMenu"
+                           prefWidth="40.0" textAlignment="CENTER">
+      					<cursor>
+      						<Cursor fx:constant="HAND" />
+      					</cursor>
+                     <HBox.margin>
+                         <Insets left="20.0" top="5.0"/>
+                     </HBox.margin>
+      				</Button>
+               </children>
+            </HBox>
+         </left>
+         <right>
+             <HBox alignment="TOP_RIGHT" prefWidth="250.0" spacing="10.0" BorderPane.alignment="CENTER">
+               <children>
+                   <Button id="btnLoad" fx:id="btnLoad" mnemonicParsing="false"
+                           onAction="#loadFiniteStateMachineFromFile" text="Load" textAlignment="CENTER">
+                       <cursor>
+                           <Cursor fx:constant="HAND"/>
+                       </cursor>
+                       <HBox.margin>
+                           <Insets top="5.0"/>
+                       </HBox.margin>
+                   </Button>
+                   <Button id="btnSave" fx:id="btnSave" mnemonicParsing="false" onAction="#saveFiniteStateMachineToFile"
+                           text="Save" textAlignment="CENTER">
+      					<cursor>
+      						<Cursor fx:constant="HAND" />
+      					</cursor>
+                     <HBox.margin>
+                         <Insets top="5.0"/>
+                     </HBox.margin>
+      				</Button>
+                   <Button id="btnExport" fx:id="btnExport" mnemonicParsing="false"
+                           onAction="#exportFiniteStateMachineAsImage" text="Export" textAlignment="CENTER">
+                       <cursor>
+                           <Cursor fx:constant="HAND"/>
+                       </cursor>
+                     <HBox.margin>
+                         <Insets right="20.0" top="5.0"/>
+                     </HBox.margin>
+                   </Button>
+               </children>
+            </HBox>
+         </right>
+         <center>
+             <Text id="title" fill="#000000cf" strokeType="OUTSIDE" strokeWidth="0.0" text="Workspace"
+                   BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                   <Insets bottom="5.0"/>
+               </BorderPane.margin>
+            </Text>
+         </center>
+         <BorderPane.margin>
+            <Insets top="5.0" />
+         </BorderPane.margin>
+      </BorderPane>
+   </top>
+   <center>
+       <StackPane BorderPane.alignment="CENTER">
+         <children>
+             <ScrollPane fx:id="workspaceScrollPane">
+               <StackPane.margin>
+                   <Insets left="20.0" right="20.0" top="38.0"/>
+               </StackPane.margin>
+                 <content>
+                     <Pane id="workspacePane" fx:id="workspacePane" maxHeight="1.7976931348623157E308"
+                           maxWidth="1.7976931348623157E308" onMousePressed="#onWorkspaceClick"/>
+                 </content>
+             </ScrollPane>
+            <ToolBar fx:id="toolbar" StackPane.alignment="TOP_CENTER">
+              <items>
+                  <ComboBox id="cbTools" fx:id="cbTools" promptText="Select Type">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></ComboBox>
+                  <Button id="btnAlphabet" layoutX="66.0" layoutY="10.0" mnemonicParsing="false"
+                          onAction="#onAlphabetButtonClick" text="Alphabet">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button id="btnTransitions" layoutX="66.0" layoutY="10.0" mnemonicParsing="false"
+                          onAction="#onTransitionsButtonClick" text="Transitions" textAlignment="CENTER">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button id="btnTestInput" layoutX="10.0" layoutY="10.0" mnemonicParsing="false"
+                          onAction="#onTestInputWordButtonClick"
+                          text="Test Input Word">
+                      <cursor>
+                          <Cursor fx:constant="HAND"/>
+                      </cursor>
+                  </Button>
+                  <Button id="btnSimulateInput" layoutX="328.0" layoutY="10.0" mnemonicParsing="false"
+                          onAction="#onSimulateInputWordButtonClick" text="Simulate Input Word" textAlignment="CENTER">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button id="btnClear" fx:id="btnClear" layoutX="396.0" layoutY="10.0" mnemonicParsing="false"
+                          onAction="#onClearWorkspaceClick" text="Clear" textAlignment="CENTER">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+              </items>
+               <StackPane.margin>
+                  <Insets left="20.0" right="20.0" />
+               </StackPane.margin>
+            </ToolBar>
+         </children>
+           <BorderPane.margin>
+               <Insets bottom="5.0"/>
+           </BorderPane.margin>
+      </StackPane>
+   </center>
+    <stylesheets>
+        <URL value="@toolkit.css"/>
+        <URL value="@../shared/scrollbarStyling.css"/>
+        <URL value="@../shared/buttonStyling.css"/>
+    </stylesheets>
+</BorderPane>

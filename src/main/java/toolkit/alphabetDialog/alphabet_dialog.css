@@ -1,0 +1,43 @@
+/* Default font and background colour for all components */
+.root, BorderPane, HBox {
+    -fx-font-family: "Open Sans";
+    -fx-background-color: #EDF7FF;
+}
+
+.label, HBox .button {
+    -fx-font-family: "Open Sans Bold";
+}
+
+#lblAlphabet {
+    -fx-font-size: 13pt;
+    -fx-text-fill: #000000cf;
+    -fx-border-radius: 0;
+    -fx-border-width: 2px;
+    -fx-border-color: #707070;
+    -fx-background-color: #FFFFFF;
+}
+
+#lblInstruction {
+    -fx-font-size: 9.5pt;
+}
+
+HBox .button {
+    -fx-font-size: 9pt;
+    -fx-border-radius: 2;
+    -fx-border-color: #000000bf;
+    -fx-background-color: #FFFFFF;
+    -fx-background-insets: 0;
+}
+
+HBox .button:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+HBox .button:default:hover {
+    -fx-background-color: #50C8783f;
+}
+
+HBox .button:cancel:hover {
+    -fx-background-color: #ff00003f;
+}

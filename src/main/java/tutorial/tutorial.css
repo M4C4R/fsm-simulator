@@ -1,0 +1,44 @@
+/* Default font and background colour for all components */
+.root {
+    -fx-font-family: "Open Sans";
+    -fx-background-color: linear-gradient(from 0px 0px to 0px 300px, #D9EEFF, #FFFFFF);
+}
+
+#title {
+    -fx-font-size: 20pt;
+}
+
+#btnBack {
+    -fx-font-family: "Open Sans Bold";
+    -fx-font-size: 10pt;
+    -fx-text-fill: #000000cf;
+    -fx-border-width: 0 !important;
+    -fx-background-color: transparent;
+    -fx-background-image: url('/main/resources/backIcon.png');
+    -fx-background-size: 30px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#btnBack:hover {
+    -fx-background-image: url('/main/resources/backIconHighlighted.png');
+}
+
+.scroll-pane .viewport, .scroll-pane {
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+}
+
+.image-view {
+    -fx-cursor: hand;
+}
+
+.label {
+    -fx-font-size: 10.5pt;
+}
+
+.label:hover {
+    -fx-text-fill: #50C878;
+    -fx-underline: true;
+    -fx-cursor: hand;
+}

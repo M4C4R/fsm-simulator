@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+<BorderPane id="bPaneMenu" fx:id="bPaneContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="550.0" prefWidth="700.0" stylesheets="@menu.css"
+            xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="main.java.menu.MenuController">
+   <top>
+       <Text id="title" fill="#000000cf" strokeType="OUTSIDE" strokeWidth="0.0" text="Finite Automata Visual Toolkit"
+             BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+             <Insets top="10.0"/>
+         </BorderPane.margin>
+      </Text>
+   </top>
+   <bottom>
+       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Copyright © 2018 - 2019 by Mert Acar"
+             BorderPane.alignment="TOP_CENTER">
+         <BorderPane.margin>
+             <Insets bottom="10.0"/>
+         </BorderPane.margin>
+      </Text>
+   </bottom>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <bottom>
+             <HBox alignment="TOP_CENTER" fillHeight="false" prefHeight="100.0" prefWidth="200.0" spacing="50.0"
+                   BorderPane.alignment="TOP_CENTER">
+               <children>
+                   <Button id="btnUseToolkit" alignment="CENTER" minHeight="120.0" minWidth="145.0"
+                           mnemonicParsing="false" onAction="#launchToolkit" text="Visual&#10;Toolkit"
+                           textAlignment="CENTER" textOverrun="CLIP" wrapText="true">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+                  <Button id="btnTutorial" alignment="CENTER" minHeight="120.0" minWidth="145.0" mnemonicParsing="false" onAction="#launchTutorial" text="Tutorial" textAlignment="CENTER" textOverrun="CLIP" wrapText="true">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button id="btnBackInfo" alignment="CENTER" minHeight="120.0" minWidth="145.0" mnemonicParsing="false" onAction="#launchBackgroundInformation" text="Background&#10;Information" textAlignment="CENTER" textOverrun="CLIP" wrapText="true">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <BorderPane.margin>
+                   <Insets bottom="30.0"/>
+               </BorderPane.margin>
+            </HBox>
+         </bottom>
+         <center>
+             <ImageView fx:id="automatonImage" accessibleText="DFA accepting words with substring of MERT"
+                        fitHeight="260.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+               <image>
+                  <Image url="@../../resources/Mert_DFA.png" />
+               </image>
+               <BorderPane.margin>
+                   <Insets top="-10.0"/>
+               </BorderPane.margin>
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+            </ImageView>
+         </center>
+         <BorderPane.margin>
+             <Insets/>
+         </BorderPane.margin>
+      </BorderPane>
+   </center>
+</BorderPane>

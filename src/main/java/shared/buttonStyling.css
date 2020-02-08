@@ -1,0 +1,23 @@
+.tool-bar .button, .tool-bar .combo-box,
+.toggle-button, .combo-box, .button, .text-area {
+    -fx-background-color: #FFFFFF;
+    -fx-background-insets: 0;
+    -fx-border-color: #000000bf;
+    -fx-border-radius: 2;
+    -fx-font-family: "Open Sans Bold";
+    -fx-font-size: 9pt;
+}
+
+.toggle-button:hover, .tool-bar .button:hover, .tool-bar .combo-box:hover {
+    -fx-background-color: #50C8787f;
+}
+
+.toggle-button:pressed, .toggle-button:selected, .toggle-button:selected:focused {
+    -fx-background-color: #50C878;
+}
+
+.toggle-button:focused, .tool-bar .button:focused,
+.tool-bar .combo-box:focused {
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: transparent;
+}

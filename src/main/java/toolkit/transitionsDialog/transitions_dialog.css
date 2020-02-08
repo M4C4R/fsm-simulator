@@ -1,0 +1,134 @@
+/* Default font and background colour for all components */
+BorderPane, HBox {
+    -fx-font-family: "Open Sans";
+    -fx-background-color: #EDF7FF;
+}
+
+GridPane .label {
+    -fx-font-family: "Open Sans Bold";
+    -fx-font-size: 10pt;
+}
+
+.combo-box:focused, #tabPane {
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: transparent;
+}
+
+.combo-box-popup .list-view .list-cell:filled:selected, #lvTransitions .list-cell:filled:selected, #lvTransitions .list-cell:filled:selected:hover {
+    -fx-background-color: #B2DCFF;
+    -fx-text-fill: #000000cf;
+}
+
+.combo-box-popup .list-view .list-cell:filled:hover, .combo-box-popup .list-view .list-cell:filled:selected:hover, #lvTransitions .list-cell:filled:hover {
+    -fx-background-color: #D9EEFF;
+    -fx-text-fill: #000000cf;
+}
+
+.combo-box:hover, #btnAdd:hover {
+    -fx-background-color: #50C8783f;
+}
+
+#btnRemove:hover {
+    -fx-background-color: #ff00003f;
+}
+
+/* ListView */
+#lvTransitions {
+    -fx-background-color: #FFFFFF;
+    -fx-font-size: 11pt;
+}
+
+/* SpreadsheetView */
+#svTransitions {
+    -fx-font-size: 10.8pt;
+    -fx-background-color: #FFFFFF;
+    -fx-box-border: transparent;
+}
+
+.tab-content-area {
+    -fx-border-color: #707070;
+    -fx-border-width: 1px;
+    -fx-background-color: #FFFFFF;
+}
+
+.tab-header-area .tab {
+    -fx-border-color: #707070;
+    -fx-border-radius: 1;
+    -fx-background-color: #FFFFFF;
+    -fx-font-size: 9pt;
+}
+
+.tab-header-area .tab:selected {
+    -fx-border-color: #707070 #707070 #FFFFFF #707070;
+}
+
+.scroll-bar {
+    -fx-font-size: 0;
+}
+
+/* Remove bottom-left square when the scrollbars are showing on the transitions table */
+.cell-corner.bottom-left {
+    -fx-shape: "";
+}
+
+/* Each individual cell in the spreadsheet */
+.spreadsheet-cell {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #000000;
+    -fx-border-width: 0.6px;
+}
+
+/* Individual cell which is being hovered over */
+.spreadsheet-cell:hover {
+    -fx-background-color: #D9EEFF;
+}
+
+/* Individual cell which has been clicked */
+.spreadsheet-cell:filled:focused {
+    -fx-background-color: #B2DCFF;
+}
+
+/* Individual cell which has been clicked - Clearing original settings by the creators */
+.selection-rectangle {
+    -fx-fill: transparent;
+    -fx-stroke: transparent;
+    -fx-stroke-width: 0;
+}
+
+/* The area of the spreadsheet containing all the cells */
+.cell-spreadsheet, .scroll-pane {
+    -fx-padding: 0;
+}
+
+/* Background of the column headers */
+.column-header-background {
+    -fx-background-color: transparent;
+}
+
+/* Corresponding column/row headers when a cell has been clicked */
+VerticalHeader > Label.selected,
+HorizontalHeaderColumn > TableColumnHeader.column-header.table-column.selected,
+HorizontalHeaderColumn > TableColumnHeader.column-header.table-column.selected > Label {
+    -fx-background-color: #B2B2FF;
+    -fx-text-fill: #000000;
+    -fx-box-border: #000000;
+    -fx-background-insets: 1;
+}
+
+/* Column/Row headers */
+VerticalHeader > Label,
+HorizontalHeaderColumn > TableColumnHeader.column-header.table-column {
+    -fx-background-color: #FFFFFF;
+    -fx-box-border: #000000;
+    -fx-border-color: #000000;
+    -fx-border-width: 1px;
+    -fx-background-insets: 0;
+    -fx-font-weight: bold;
+    -fx-size: 2em;
+    -fx-font-style: normal;
+}
+
+/* Column headers */
+HorizontalHeaderColumn > TableColumnHeader.column-header.table-column {
+    -fx-padding: 5 0 5 0;
+}

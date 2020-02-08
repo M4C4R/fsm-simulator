@@ -1,0 +1,49 @@
+/* Default font and background colour for all components */
+.root, BorderPane, HBox {
+    -fx-font-family: "Open Sans";
+    -fx-background-color: #EDF7FF;
+}
+
+.label, .list-view, .button, .text-area {
+    -fx-text-fill: #000000;
+    -fx-font-family: "Open Sans Bold";
+}
+
+.label {
+    -fx-font-size: 9.5pt;
+}
+
+.list-view {
+    -fx-font-size: 10pt;
+}
+
+.list-view .list-cell:selected {
+    -fx-background-color: #B2DCFF;
+}
+
+.text-field, .button {
+    -fx-pref-height: 30px;
+}
+
+.button {
+    -fx-cursor: hand;
+}
+
+.button:focused, .text-area:focused {
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: transparent;
+}
+
+.button:default:hover {
+    -fx-background-color: #50C8783f;
+}
+
+.button:cancel:hover {
+    -fx-background-color: #ff00003f;
+}
+
+.text-area:focused, .text-area .content, .text-area:focused .content {
+    -fx-highlight-fill: #B2DCFF;
+    -fx-highlight-text-fill: #000000;
+    -fx-background-color: #FFFFFF;
+}

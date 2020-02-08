@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import java.net.URL?>
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="550.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.tutorial.TutorialController">
+    <bottom>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Copyright © 2018 - 2019 by Mert Acar"
+              BorderPane.alignment="TOP_CENTER">
+            <BorderPane.margin>
+                <Insets bottom="10.0"/>
+            </BorderPane.margin>
+        </Text>
+    </bottom>
+    <top>
+        <BorderPane prefWidth="800.0" BorderPane.alignment="CENTER">
+            <left>
+                <HBox prefWidth="80.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <Button id="btnBack" mnemonicParsing="false" onAction="#launchMainMenu" prefWidth="40.0"
+                                textAlignment="CENTER">
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                            <HBox.margin>
+                                <Insets left="20.0" top="5.0"/>
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                </HBox>
+            </left>
+            <center>
+                <Text id="title" fill="#000000cf" strokeType="OUTSIDE" strokeWidth="0.0" text="Tutorial"
+                      BorderPane.alignment="CENTER">
+                    <BorderPane.margin>
+                        <Insets bottom="5.0" right="80.0"/>
+                    </BorderPane.margin>
+                </Text>
+            </center>
+            <BorderPane.margin>
+                <Insets top="5.0"/>
+            </BorderPane.margin>
+        </BorderPane>
+    </top>
+    <center>
+        <StackPane BorderPane.alignment="CENTER">
+            <children>
+                <ScrollPane fitToHeight="true" fitToWidth="true" maxWidth="875.0" StackPane.alignment="CENTER">
+                    <StackPane.margin>
+                        <Insets bottom="10.0" left="20.0" right="20.0"/>
+                    </StackPane.margin>
+                    <content>
+                        <GridPane fx:id="tutorialsContainer">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints vgrow="SOMETIMES"/>
+                                <RowConstraints vgrow="SOMETIMES"/>
+                                <RowConstraints vgrow="SOMETIMES"/>
+                            </rowConstraints>
+                            <children>
+                                <VBox alignment="CENTER">
+                                    <children>
+                                        <ImageView id="statesTutorialThumbnail" fx:id="statesTutorialThumbnail"
+                                                   fitWidth="200.0"
+                                                   onMouseClicked="#onStatesTutorialClick" pickOnBounds="true"
+                                                   preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../resources/StatesTutorial.jpg"/>
+                                            </image>
+                                        </ImageView>
+                                        <Label onMouseClicked="#onStatesTutorialClick" prefWidth="160.0"
+                                               text="Definition and Deletion of States" textAlignment="CENTER"
+                                               wrapText="true"/>
+                                    </children>
+                                </VBox>
+                                <VBox alignment="CENTER" GridPane.columnIndex="1">
+                                    <children>
+                                        <ImageView id="transitionsTutorialThumbnail"
+                                                   fx:id="transitionsTutorialThumbnail" fitWidth="200.0"
+                                                   onMouseClicked="#onTransitionsTutorialClick" pickOnBounds="true"
+                                                   preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../resources/TransitionsTutorial.jpg"/>
+                                            </image>
+                                        </ImageView>
+                                        <Label onMouseClicked="#onTransitionsTutorialClick" prefWidth="160.0"
+                                               text="Definition and Deletion of Transitions" textAlignment="CENTER"
+                                               wrapText="true"/>
+                                    </children>
+                                </VBox>
+                                <VBox alignment="CENTER" GridPane.columnIndex="2">
+                                    <children>
+                                        <ImageView id="movingComponentsTutorialThumbnail"
+                                                   fx:id="movingComponentsTutorialThumbnail" fitWidth="200.0"
+                                                   onMouseClicked="#onMovingComponentsTutorialClick" pickOnBounds="true"
+                                                   preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../resources/MovingTutorial.jpg"/>
+                                            </image>
+                                        </ImageView>
+                                        <Label onMouseClicked="#onMovingComponentsTutorialClick" prefWidth="160.0"
+                                               text="Moving Defined Components Around" textAlignment="CENTER"
+                                               wrapText="true"/>
+                                    </children>
+                                </VBox>
+                                <VBox alignment="CENTER" GridPane.rowIndex="1">
+                                    <children>
+                                        <ImageView id="alphabetTutorialThumbnail" fx:id="alphabetTutorialThumbnail"
+                                                   fitWidth="200.0"
+                                                   onMouseClicked="#onAlphabetTutorialClick" pickOnBounds="true"
+                                                   preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../resources/AlphabetTutorial.jpg"/>
+                                            </image>
+                                        </ImageView>
+                                        <Label onMouseClicked="#onAlphabetTutorialClick" prefWidth="160.0"
+                                               text="Management of the Alphabet" textAlignment="CENTER"
+                                               wrapText="true"/>
+                                    </children>
+                                </VBox>
+                                <VBox alignment="CENTER" layoutX="10.0" layoutY="233.0" GridPane.columnIndex="1"
+                                      GridPane.rowIndex="1">
+                                    <children>
+                                        <ImageView id="savingLoadingExportingTutorialThumbnail"
+                                                   fx:id="savingLoadingExportingTutorialThumbnail" fitWidth="200.0"
+                                                   onMouseClicked="#onSavingLoadingExportingTutorialClick"
+                                                   pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../resources/SaveLoadExportTutorial.jpg"/>
+                                            </image>
+                                        </ImageView>
+                                        <Label onMouseClicked="#onSavingLoadingExportingTutorialClick" prefWidth="160.0"
+                                               text="Saving, Loading, and Exporting Automata" textAlignment="CENTER"
+                                               wrapText="true"/>
+                                    </children>
+                                </VBox>
+                                <VBox alignment="CENTER" layoutX="229.0" layoutY="233.0" GridPane.columnIndex="2"
+                                      GridPane.rowIndex="1">
+                                    <children>
+                                        <ImageView id="testingInputTutorialThumbnail"
+                                                   fx:id="testingInputTutorialThumbnail" fitWidth="200.0"
+                                                   onMouseClicked="#onTestingInputTutorialClick" pickOnBounds="true"
+                                                   preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../resources/TestInputWordsTutorial.jpg"/>
+                                            </image>
+                                        </ImageView>
+                                        <Label onMouseClicked="#onTestingInputTutorialClick" prefWidth="160.0"
+                                               text="Testing Input Words on Finite Automata" textAlignment="CENTER"
+                                               wrapText="true"/>
+                                    </children>
+                                </VBox>
+                                <VBox alignment="CENTER" layoutX="448.0" layoutY="233.0" GridPane.columnIndex="1"
+                                      GridPane.rowIndex="2">
+                                    <children>
+                                        <ImageView id="simulationTutorialThumbnail" fx:id="simulationTutorialThumbnail"
+                                                   fitWidth="200.0"
+                                                   onMouseClicked="#onSimulationTutorialClick" pickOnBounds="true"
+                                                   preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../resources/SimulationTutorial.jpg"/>
+                                            </image>
+                                        </ImageView>
+                                        <Label onMouseClicked="#onSimulationTutorialClick" prefWidth="160.0"
+                                               text="Simulating Input Words on Finite Automata" textAlignment="CENTER"
+                                               wrapText="true"/>
+                                    </children>
+                        </VBox>
+                            </children>
+                        </GridPane>
+                    </content>
+                </ScrollPane>
+            </children>
+            <BorderPane.margin>
+                <Insets bottom="5.0"/>
+            </BorderPane.margin>
+        </StackPane>
+    </center>
+    <stylesheets>
+        <URL value="@tutorial.css"/>
+        <URL value="@../shared/scrollbarStyling.css"/>
+        <URL value="@../shared/buttonStyling.css"/>
+    </stylesheets>
+</BorderPane>

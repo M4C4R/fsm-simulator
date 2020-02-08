@@ -1,0 +1,5 @@
+states={Q0,31.0,110.0}
+alphabet=
+initialState=Q0
+acceptingStates=[]
+transitions={Q0,ε,Q0,-0.0,0.0,-1.5974566751694947,true}

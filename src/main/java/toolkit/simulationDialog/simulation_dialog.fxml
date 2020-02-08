@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import java.net.URL?>
+<BorderPane prefWidth="480.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="main.java.toolkit.simulationDialog.SimulationDialogController">
+    <padding>
+        <Insets bottom="-10.0" top="10.0"/>
+    </padding>
+    <center>
+        <BorderPane BorderPane.alignment="CENTER">
+            <bottom>
+                <HBox alignment="CENTER" fillHeight="false" BorderPane.alignment="CENTER">
+                    <children>
+                        <Button id="btnStepBackward" fx:id="btnStepBackward" mnemonicParsing="false"
+                                onAction="#onStepBackwardClick" prefHeight="30.0" prefWidth="50.0">
+                            <HBox.margin>
+                                <Insets bottom="-10.0" top="10.0"/>
+                            </HBox.margin>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </Button>
+                        <Button id="btnRewind" fx:id="btnRewind" layoutX="130.0" layoutY="10.0" mnemonicParsing="false"
+                                onAction="#onRewindClick" prefHeight="30.0" prefWidth="50.0">
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                            <HBox.margin>
+                                <Insets bottom="-10.0" top="10.0"/>
+                            </HBox.margin>
+                        </Button>
+                        <Button id="btnPause" fx:id="btnPause" layoutX="70.0" layoutY="10.0" mnemonicParsing="false"
+                                onAction="#onPauseClick" prefHeight="30.0" prefWidth="50.0">
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                            <HBox.margin>
+                                <Insets bottom="-10.0" top="10.0"/>
+                            </HBox.margin>
+                        </Button>
+                        <Button id="btnPlay" fx:id="btnPlay" layoutX="10.0" layoutY="20.0" mnemonicParsing="false"
+                                onAction="#onPlayClick" prefHeight="30.0" prefWidth="50.0">
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                            <HBox.margin>
+                                <Insets bottom="-10.0" top="10.0"/>
+                            </HBox.margin>
+                        </Button>
+                        <Button id="btnStepForward" fx:id="btnStepForward" layoutX="181.0" layoutY="20.0"
+                                mnemonicParsing="false" onAction="#onStepForwardClick" prefHeight="30.0"
+                                prefWidth="50.0">
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                            <HBox.margin>
+                                <Insets bottom="-10.0" top="10.0"/>
+                            </HBox.margin>
+                        </Button>
+                        <VBox alignment="CENTER">
+                            <children>
+                                <Label fx:id="lblSpeed" text="Speed">
+                                    <font>
+                                        <Font name="System Bold Italic" size="16.0"/>
+                                    </font>
+                                </Label>
+                                <Slider id="speedSlider" fx:id="speedSlider" blockIncrement="2.0" majorTickUnit="2.0"
+                                        max="8.0"
+                                        min="-8.0" minorTickCount="0" snapToTicks="true"/>
+                            </children>
+                            <HBox.margin>
+                                <Insets bottom="-16.0" left="10.0" right="10.0"/>
+                            </HBox.margin>
+                        </VBox>
+                        <ProgressIndicator fx:id="timerIndicator" prefHeight="35.0" prefWidth="35.0" progress="0.0">
+                            <HBox.margin>
+                                <Insets bottom="-12.0" top="10.0"/>
+                            </HBox.margin>
+                            <padding>
+                                <Insets bottom="-18.0"/>
+                            </padding>
+                        </ProgressIndicator>
+                    </children>
+                    <BorderPane.margin>
+                        <Insets bottom="20.0"/>
+                    </BorderPane.margin>
+                </HBox>
+            </bottom>
+            <center>
+                <ListView id="lvPaths" fx:id="lvPaths" onKeyPressed="#handleKeyPressOnListView" prefHeight="100.0"
+                          BorderPane.alignment="CENTER">
+                    <placeholder>
+                        <Label id="lblNoPaths" text="There are no paths to explore!"/>
+                    </placeholder>
+                    <BorderPane.margin>
+                        <Insets left="10.0" right="10.0"/>
+                    </BorderPane.margin>
+                </ListView>
+            </center>
+            <top>
+                <HBox alignment="CENTER" spacing="50.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <Label id="lblPathCount" fx:id="lblPathCount" alignment="CENTER" prefHeight="30.0"
+                               prefWidth="180.0" text="Active path count: 0" textAlignment="CENTER">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Label>
+                        <Label id="lblStepNumber" fx:id="lblStepNumber" alignment="CENTER" layoutX="178.0"
+                               layoutY="10.0" prefHeight="30.0" prefWidth="180.0" text="Step: 0" textAlignment="CENTER">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Label>
+                    </children>
+                    <BorderPane.margin>
+                        <Insets left="10.0" right="10.0"/>
+                    </BorderPane.margin>
+                </HBox>
+            </top>
+            <BorderPane.margin>
+                <Insets bottom="-10.0"/>
+            </BorderPane.margin>
+        </BorderPane>
+    </center>
+    <top>
+        <HBox alignment="CENTER" BorderPane.alignment="CENTER">
+            <children>
+                <Label id="lblInstruction" prefHeight="30.0" text="Input a word to simulate:">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+                <TextField fx:id="tfInputWord" prefHeight="30.0" prefWidth="180.0">
+                    <HBox.margin>
+                        <Insets left="10.0"/>
+                    </HBox.margin>
+                </TextField>
+                <ToggleButton id="btnSimulate" fx:id="btnSimulate" mnemonicParsing="false"
+                              onAction="#onSimulateButtonClick"
+                              prefHeight="30.0" prefWidth="80.0" text="Simulate">
+                    <HBox.margin>
+                        <Insets left="10.0"/>
+                    </HBox.margin>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </ToggleButton>
+            </children>
+            <BorderPane.margin>
+                <Insets left="10.0" right="10.0"/>
+            </BorderPane.margin>
+        </HBox>
+    </top>
+    <stylesheets>
+        <URL value="@simulation_dialog.css"/>
+        <URL value="@../../shared/scrollbarStyling.css"/>
+        <URL value="@../../shared/buttonStyling.css"/>
+    </stylesheets>
+</BorderPane>

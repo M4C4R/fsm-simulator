@@ -1,0 +1,99 @@
+/* Default font for all components */
+.root {
+	-fx-font-family: "Open Sans";
+}
+
+.combo-box-popup .list-view .list-cell:filled:selected, .combo-box-popup .list-view .list-cell:filled:selected:hover {
+	-fx-background-color: #B2DCFF;
+	-fx-text-fill: #000000cf;
+}
+
+.combo-box-popup .list-view .list-cell:filled:hover {
+	-fx-background-color: #D9EEFF;
+	-fx-text-fill: #000000cf;
+}
+
+.tool-bar {
+	-fx-border-color: #707070;
+	-fx-border-radius: 2 2 0 0;
+	-fx-border-width: 2px;
+	-fx-background-color: #F8F8FF;
+	-fx-background-radius: 2 2 0 0;
+}
+
+.scroll-pane {
+	-fx-border-color: #707070;
+	-fx-border-width: 2px;
+	-fx-border-radius: 2;
+}
+
+.scroll-pane:focused {
+	-fx-focus-color: transparent;
+	-fx-faint-focus-color: transparent;
+}
+
+#title {
+	-fx-font-size: 20pt;
+}
+
+#bpMain {
+	-fx-background-color: linear-gradient(from 0px 0px to 0px 300px, #D9EEFF, #FFFFFF);
+}
+
+#btnBack, #btnLoad, #btnSave, #btnExport {
+	-fx-background-color: transparent;
+	-fx-font-family: "Open Sans Bold";
+	-fx-font-size: 10pt;
+}
+
+#btnBack {
+	-fx-background-image: url('/main/resources/backIcon.png');
+	-fx-background-size: 30px;
+	-fx-background-repeat: no-repeat;
+	-fx-background-position: center;
+}
+
+#btnBack, #btnLoad, #btnSave, #btnExport {
+	-fx-text-fill: #000000cf;
+	-fx-border-width: 0 !important;
+}
+
+#btnBack:hover {
+	-fx-background-image: url('/main/resources/backIconHighlighted.png');
+}
+
+#btnLoad:hover, #btnSave:hover, #btnExport:hover {
+	-fx-text-fill: #50C878;
+	-fx-underline: true;
+}
+
+#workspacePane {
+    -fx-background-image: url("/main/resources/grid.png");
+}
+
+#btnState, #btnAcceptingState {
+	-fx-border-color: #000000;
+	-fx-background-color: #FFFFFF;
+	-fx-border-width: 2px;
+	-fx-background-radius: 50%;
+    -fx-border-radius: 50%;
+    -fx-focus-color: #000000;
+    -fx-faint-focus-color: #000000;
+    -fx-background-insets: 1,1,1,1;
+	-fx-font-size: 10pt;
+}
+
+#btnState:hover, #btnAcceptingState:hover {
+	-fx-border-color: #7CFC00 !important;
+}
+
+#btnAcceptingState{
+	-fx-background-image: url("/main/resources/acceptingState.png");
+	-fx-background-size: stretch;
+    -fx-background-repeat: no-repeat;
+}
+
+/* Prevent reducing opacity on the workspace when the simulation dialog disables it */
+Pane:disabled, #btnAcceptingState:disabled, #btnState:disabled, Label:disabled {
+	-fx-opacity: 1;
+}

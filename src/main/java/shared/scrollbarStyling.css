@@ -1,0 +1,31 @@
+.scroll-bar:vertical, .scroll-bar:horizontal {
+    -fx-pref-width: 10px;
+    -fx-pref-height: 10px;
+    -fx-background-color: transparent;
+}
+
+/* Hides the scrollbar increment and decrement buttons */
+.scroll-bar .increment-button, .scroll-bar .decrement-button,
+.scroll-bar .increment-button .increment-arrow, .scroll-bar .decrement-button .decrement-arrow {
+    -fx-padding: -10;
+}
+
+.scroll-bar .thumb {
+    -fx-border-color: #000000;
+    -fx-background-color: #FFEAD9;
+    -fx-background-insets: 0;
+}
+
+.scroll-bar .thumb:hover, .scroll-bar .thumb:pressed {
+    -fx-background-color: #FFD4B2;
+}
+
+.scroll-bar .track {
+    -fx-border-color: #000000;
+    -fx-background-color: #F8F8F8;
+}
+
+/* Remove the default colour of the intersection corner of the vertical and horizontal scrollbars */
+.corner {
+    -fx-background-color: transparent;
+}

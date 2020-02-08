@@ -1,0 +1,9 @@
+/* Remove the scroll-bars on the webview */
+WebView .scroll-bar {
+    -fx-opacity: 0;
+}
+
+/* Remove the padding at the bottom of the dialog */
+.dialog-pane {
+    -fx-padding: 0 0 -20 0;
+}

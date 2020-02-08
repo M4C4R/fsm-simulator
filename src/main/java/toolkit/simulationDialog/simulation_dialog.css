@@ -1,0 +1,132 @@
+/* Default font and background colour for all components */
+.root, BorderPane, HBox, .button {
+    -fx-font-family: "Open Sans";
+    -fx-background-color: #EDF7FF;
+}
+
+#lblStepNumber, #lblPathCount, #lblInstruction, .list-view {
+    -fx-font-family: "Open Sans Bold";
+}
+
+#lblInstruction {
+    -fx-font-size: 9pt;
+}
+
+.list-view {
+    -fx-text-fill: #000000;
+    -fx-font-size: 10pt;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-border-color: #707070;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-background-insets: 0;
+}
+
+.list-view .list-cell {
+    -fx-text-fill: #000000;
+}
+
+.list-view .list-cell:selected, .list-view .list-cell:selected:focused {
+    -fx-text-fill: ladder(-fx-background, #FFFFFF 49%, #000000 50%);
+    -fx-label-padding: 0 0 0 10;
+}
+
+.text-area {
+    -fx-font-size: 9.5pt;
+    -fx-control-inner-background: #FFFFFF;
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 0;
+    -fx-cursor: default;
+    -fx-margin: 0;
+    -fx-font-family: "Open Sans";
+}
+
+.text-area .scroll-pane {
+    -fx-vbar-policy: NEVER;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-background-insets: 0;
+    -fx-cursor: default;
+}
+
+.text-area .content {
+    -fx-background-color: #FFFFFF;
+    -fx-cursor: default;
+}
+
+Placeholder.Label {
+    -fx-font-size: 10pt;
+    -fx-font-family: "Open Sans";
+}
+
+#btnStepBackward, #btnStepForward, #btnPlay, #btnPause, #btnRewind {
+    -fx-border-color: #000000;
+    -fx-border-width: 2px;
+    -fx-background-color: #B2B2FF, -fx-base;
+    -fx-background-size: 30px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-padding: 10 0 14 0;
+    -fx-background-insets: 5 0 0 0, 0 0 5 0, 0, 0;
+    -fx-background-radius: 8;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.75), 4, 0, 0, 1);
+
+}
+
+#btnStepBackward:pressed, #btnStepForward:pressed, #btnPlay:pressed, #btnPause:pressed, #btnRewind:pressed {
+    -fx-opacity: 0.6;
+    -fx-padding: 12 12 12 12;
+    -fx-background-insets: 5 0 0 0, 3 0 4 0, 3 0 5 0, 3 0 6 0;
+}
+
+#btnStepForward {
+    -fx-background-image: url('/main/resources/stepForwardIcon.png');
+}
+
+#btnStepBackward {
+    -fx-background-image: url('/main/resources/stepBackwardIcon.png');
+}
+
+#btnPlay {
+    -fx-background-image: url('/main/resources/playIcon.png');
+}
+
+#btnPause {
+    -fx-background-image: url('/main/resources/pauseIcon.png');
+}
+
+#btnRewind {
+    -fx-background-image: url('/main/resources/rewindIcon.png');
+}
+
+/* Removes the default percentage text below the progress indicator */
+.progress-indicator .percentage {
+    -fx-fill: null;
+}
+
+.progress-indicator {
+    -fx-progress-color: #9E9EFF;
+    -fx-border-color: #000000bf;
+    -fx-border-radius: 100%;
+    -fx-border-insets: 0 1 1 0;
+}
+
+/* Speed slider styling */
+.slider .thumb {
+    -fx-background-color: #B2B2FF;
+    -fx-pref-width: 16px;
+    -fx-pref-height: 22px;
+    -fx-border-color: #000000;
+    -fx-border-width: 2px;
+    -fx-border-radius: 2;
+}
+
+.slider .track {
+    -fx-pref-height: 10px;
+    -fx-background-color: -fx-base;
+    -fx-border-color: #000000;
+    -fx-border-width: 2px;
+    -fx-border-radius: 2;
+}
