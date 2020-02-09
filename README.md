@@ -9,6 +9,7 @@ N.B. This project is no longer being worked on.
 - JUnit (4.12)
 - TestFX Core (4.0.15 alpha)
 - TestFX JUnit (4.0.15 alpha)  
+  
 Download the above as jars and add it to a `lib` folder at the root if you wish to run from source code.  
 I tended to run the project using Apache ANT by executing `ant run`.
 # Screenshots
