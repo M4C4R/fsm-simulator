@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="FiniteAutomataVT" default="run" basedir="." xmlns:fx="javafx:com.sun.javafx.tools.ant">
+
+    <path id="classpath.main">
+        <pathelement location="../lib/controlsfx-8.40.14.jar"/>
+    </path>
+
+    <path id="classpath.test">
+        <pathelement location="../lib/junit-4.12.jar"/>
+        <pathelement location="../lib/hamcrest-2.1.jar"/>
+        <pathelement location="../lib/testfx-core-4.0.15-alpha.jar"/>
+        <pathelement location="../lib/testfx-junit-4.0.15-alpha.jar"/>
+        <pathelement location="../lib/controlsfx-8.40.14.jar"/>
+        <pathelement location="build/classes"/>
+    </path>
+
+    <taskdef resource="com/sun/javafx/tools/ant/antlib.xml"
+             uri="javafx:com.sun.javafx.tools.ant"
+             classpath="${java.home}/../lib/ant-javafx.jar"/>
+
+    <target name="copy-source-code">
+        <!-- Delete current copied source code -->
+        <delete dir="project"/>
+
+        <!-- Copy over new source code -->
+        <mkdir dir="project"/>
+        <copy todir="project">
+            <fileset dir="../">
+                <include name="src/**"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="compile" depends="copy-source-code">
+        <delete dir="build"/>
+        <mkdir dir="build/classes/main"/>
+
+        <!-- Compile the project source code - excluding test files -->
+        <javac includeantruntime="false" srcdir="project/src/main" destdir="build/classes">
+            <classpath>
+                <path refid="classpath.main"/>
+            </classpath>
+        </javac>
+
+        <!-- Copy over non-Java files -->
+        <copy todir="build/classes/main">
+            <fileset dir="project/src/main">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="create-distributions" depends="compile">
+        <delete file="dist"/>
+        <mkdir dir="dist/bundled"/>
+        <mkdir dir="dist/separate/libs"/>
+
+        <!-- Copy over build libraries for separate distribution -->
+        <copy todir="dist/separate/libs">
+            <file file="../lib/controlsfx-8.40.14.jar"/>
+        </copy>
+
+        <!-- Create a jar with the libraries in a separate folder -->
+        <fx:jar destfile="dist/separate/FiniteAutomataVT.jar">
+            <fx:application id="fxApplication" name="FiniteAutomataVT" mainClass="main.java.Main" toolkit="fx"/>
+            <fileset dir="build/classes">
+            </fileset>
+            <fx:resources id="appRes">
+                <fx:fileset dir="dist/separate" includes="FiniteAutomataVT.jar"/>
+                <fx:fileset dir="dist/separate" includes="libs/*"/>
+            </fx:resources>
+
+            <manifest>
+                <attribute name="Main-Class" value="main.java.Main"/>
+                <attribute name="Implementation-Title" value="Finite Automata Visual Toolkit"/>
+                <attribute name="Created-By" value="Mert Acar"/>
+            </manifest>
+        </fx:jar>
+
+        <!-- Create a bundled jar which includes all the libraries it requires -->
+        <jar destfile="dist/bundled/FiniteAutomataVT.jar" basedir="build/classes">
+            <zipgroupfileset dir="dist/separate/libs" includes="*"/>
+            <manifest>
+                <attribute name="Main-Class" value="main.java.Main"/>
+                <attribute name="Implementation-Title" value="Finite Automata Visual Toolkit"/>
+                <attribute name="Created-By" value="Mert Acar"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run" depends="create-distributions">
+        <java jar="dist/bundled/FiniteAutomataVT.jar" fork="true"/>
+    </target>
+
+    <target name="test-compile" depends="compile">
+        <delete dir="test"/>
+        <mkdir dir="test/classes/test"/>
+
+        <javac includeantruntime="false" srcdir="project/src/test" destdir="test/classes">
+            <classpath>
+                <path refid="classpath.test"/>
+            </classpath>
+        </javac>
+
+        <!-- Copy over test automata -->
+        <copy todir="build/classes/test/test_automata">
+            <fileset dir="project/src/test/test_automata">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="test" depends="test-compile">
+        <mkdir dir="test/reports"/>
+
+        <junit fork="yes" printsummary="on" haltonfailure="no">
+            <batchtest fork="yes" todir="test/reports">
+                <fileset dir="test/classes">
+                    <include name="**/*Test.class"/>
+                </fileset>
+            </batchtest>
+            <formatter type="xml"/>
+            <classpath>
+                <path refid="classpath.test"/>
+                <pathelement location="test/classes"/>
+            </classpath>
+        </junit>
+
+        <junitreport todir="test/reports">
+            <fileset dir="test/reports">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report todir="test/reports" format="frames"/>
+        </junitreport>
+    </target>
+</project>
