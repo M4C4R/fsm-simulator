@@ -2,6 +2,13 @@
 My final year project at King's College London.  
 Java application allowing users to simulate finite state machines.  
 N.B. This project is no longer being worked on.
+# Libraries Used
+- ControlsFX (8.40.14)
+  - Only used to represent transitions through a transition table
+- Hamcrest (2.1)
+- JUnit (4.12)
+- TestFX Core (4.0.15 alpha)
+- TestFX JUnit (4.0.15 alpha)
 # Screenshots
 ### Welcome Screen
 ![Welcome Screen](https://user-images.githubusercontent.com/25368652/74090979-58a00800-4aaa-11ea-825a-2bc7a9727890.jpg)
